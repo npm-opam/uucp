@@ -1,0 +1,199 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Uucp.Break.html">
+<link rel="next" href="Uucp.Cjk.html">
+<link rel="Up" href="Uucp.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Uucp" rel="Chapter" href="Uucp.html"><link title="Case properties" rel="Section" href="#caseprops">
+<link title="Case mappings and foldings" rel="Section" href="#casemapfold">
+<link title="Examples" rel="Section" href="#caseexamples">
+<link title="Default case conversion on UTF-8 strings" rel="Subsection" href="#caseconversion">
+<link title="Default caseless matching (equality) on UTF-8 strings" rel="Subsection" href="#caselesseq">
+<title>Uucp.Case</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Uucp.Break.html" title="Uucp.Break">Previous</a>
+&nbsp;<a class="up" href="Uucp.html" title="Uucp">Up</a>
+&nbsp;<a class="post" href="Uucp.Cjk.html" title="Uucp.Cjk">Next</a>
+</div>
+<h1>Module <a href="type_Uucp.Case.html">Uucp.Case</a></h1>
+
+<pre><span class="keyword">module</span> Case: <code class="code"><span class="keyword">sig</span></code> <a href="Uucp.Case.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+Case properties, mappings and foldings.
+<p>
+
+    These properties can implement Unicode's default case detection,
+    case conversion and caseless equality over Unicode text, see the
+    <a href="Uucp.Case.html#caseexamples">examples</a>.
+<p>
+
+    <h3 id="3_References">References</h3>
+    <ul>
+<li><a href="http://unicode.org/faq/casemap_charprop.html#casemap">
+        The Unicode case mapping FAQ.</a></li>
+<li><a href="http://www.unicode.org/charts/case/">The Unicode case mapping
+       charts.</a></li>
+</ul>
+<br>
+</div>
+<hr width="100%">
+<br>
+<h1 id="caseprops">Case properties</h1><br>
+
+<pre><span id="VALis_lower"><span class="keyword">val</span> is_lower</span> : <code class="type"><a href="Uucp.html#TYPEuchar">Uucp.uchar</a> -> bool</code></pre><div class="info ">
+<code class="code">is_lower u</code> is <code class="code"><span class="keyword">true</span></code> iff <code class="code">u</code> has the
+      <a href="http://www.unicode.org/reports/tr44/#Lowercase">Lowercase</a> derived
+      property.<br>
+</div>
+
+<pre><span id="VALis_upper"><span class="keyword">val</span> is_upper</span> : <code class="type"><a href="Uucp.html#TYPEuchar">Uucp.uchar</a> -> bool</code></pre><div class="info ">
+<code class="code">is_upper u</code> is <code class="code"><span class="keyword">true</span></code> iff <code class="code">u</code> has the
+      <a href="http://www.unicode.org/reports/tr44/#Uppercase">Uppercase</a> derived
+      property.<br>
+</div>
+
+<pre><span id="VALis_cased"><span class="keyword">val</span> is_cased</span> : <code class="type"><a href="Uucp.html#TYPEuchar">Uucp.uchar</a> -> bool</code></pre><div class="info ">
+<code class="code">is_cased u</code> is <code class="code"><span class="keyword">true</span></code> iff <code class="code">u</code> has the
+      <a href="http://www.unicode.org/reports/tr44/#Cased">Cased</a> derived property.<br>
+</div>
+
+<pre><span id="VALis_case_ignorable"><span class="keyword">val</span> is_case_ignorable</span> : <code class="type"><a href="Uucp.html#TYPEuchar">Uucp.uchar</a> -> bool</code></pre><div class="info ">
+<code class="code">is_case_ignorable</code> is <code class="code"><span class="keyword">true</span></code> iff <code class="code">u</code> has the
+      <a href="http://www.unicode.org/reports/tr44/#Case_Ignorable">Case_Ignorable</a>
+      derived property.<br>
+</div>
+<br>
+<h1 id="casemapfold">Case mappings and foldings</h1>
+<p>
+
+      These character mapping functions return <code class="code"><span class="keywordsign">`</span><span class="constructor">Self</span></code>
+      whenever a character maps to itself.<br>
+
+<pre><span class="keyword">module</span> <a href="Uucp.Case.Map.html">Map</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Uucp.Case.Map.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+Case mappings.
+</div>
+
+<pre><span class="keyword">module</span> <a href="Uucp.Case.Fold.html">Fold</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Uucp.Case.Fold.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+Case folding.
+</div>
+
+<pre><span class="keyword">module</span> <a href="Uucp.Case.Nfkc_fold.html">Nfkc_fold</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Uucp.Case.Nfkc_fold.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+NFKC case folding.
+</div>
+<br>
+<h1 id="caseexamples">Examples</h1>
+<p>
+
+      These examples use <code class="code"><span class="constructor">Uutf</span></code> to fold over the characters of UTF-8
+      encoded OCaml strings and to UTF-8 encode mapped characters in
+      an OCaml <code class="code"><span class="constructor">Buffer</span>.t</code> value.
+<p>
+
+      <h2 id="caseconversion">Default case conversion on UTF-8 strings</h2>
+<p>
+
+      The value <code class="code">casemap_utf_8 cmap s</code> is the UTF-8 encoded string
+      resulting from applying the character map <code class="code">cmap</code> to every character
+      of the UTF-8 encoded string <code class="code">s</code>.
+<pre class="codepre"><code class="code"><span class="keyword">let</span>&nbsp;cmap_utf_8&nbsp;cmap&nbsp;s&nbsp;=<br>
+&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;b&nbsp;=&nbsp;<span class="constructor">Buffer</span>.create&nbsp;(<span class="constructor">String</span>.length&nbsp;s&nbsp;*&nbsp;2)&nbsp;<span class="keyword">in</span><br>
+&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;<span class="keyword">rec</span>&nbsp;add_map&nbsp;_&nbsp;_&nbsp;u&nbsp;=<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;u&nbsp;=&nbsp;<span class="keyword">match</span>&nbsp;u&nbsp;<span class="keyword">with</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Malformed</span>&nbsp;_&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Uutf</span>.u_rep&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Uchar</span>&nbsp;u&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;u&nbsp;<span class="keyword">in</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">match</span>&nbsp;cmap&nbsp;u&nbsp;<span class="keyword">with</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Self</span>&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Uutf</span>.<span class="constructor">Buffer</span>.add_utf_8&nbsp;b&nbsp;u<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Uchars</span>&nbsp;us&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">List</span>.iter&nbsp;(<span class="constructor">Uutf</span>.<span class="constructor">Buffer</span>.add_utf_8&nbsp;b)&nbsp;us<br>
+&nbsp;&nbsp;<span class="keyword">in</span><br>
+&nbsp;&nbsp;<span class="constructor">Uutf</span>.<span class="constructor">String</span>.fold_utf_8&nbsp;add_map&nbsp;()&nbsp;s;&nbsp;<span class="constructor">Buffer</span>.contents&nbsp;b<br>
+</code></pre>
+      Using the function <code class="code">cmap_utf_8</code>, Unicode's default case
+      conversions can be implemented with:
+<pre class="codepre"><code class="code"><span class="keyword">let</span>&nbsp;lowercase_utf_8&nbsp;s&nbsp;=&nbsp;cmap_utf_8&nbsp;<span class="constructor">Uucp</span>.<span class="constructor">Case</span>.<span class="constructor">Map</span>.to_lower&nbsp;s<br>
+<span class="keyword">let</span>&nbsp;uppercase_utf_8&nbsp;s&nbsp;=&nbsp;cmap_utf_8&nbsp;<span class="constructor">Uucp</span>.<span class="constructor">Case</span>.<span class="constructor">Map</span>.to_upper&nbsp;s<br>
+</code></pre>
+      However strictly speaking <code class="code">lowercase_utf_8</code> is not conformant
+      as it doesn't handle the context sensitive mapping of capital
+      sigma U+03A3 to final sigma U+03C2.
+<p>
+
+      Note that applying Unicode's default case algorithms to a normalized
+      string does not preserve its normalization form.
+<p>
+
+      <h2 id="caselesseq">Default caseless matching (equality) on UTF-8 strings</h2>
+<p>
+
+      These examples use <code class="code"><span class="constructor">Uunf</span></code> to normalize character sequences
+<p>
+
+      Unicode canonical caseless matching (D145) is defined by
+      normalizing to NFD, applying the Case_Folding mapping, normalizing
+      again to NFD and test the result for binary equality:
+<p>
+
+<pre class="codepre"><code class="code"><span class="keyword">let</span>&nbsp;canonical_caseless_key&nbsp;s&nbsp;=<br>
+&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;b&nbsp;=&nbsp;<span class="constructor">Buffer</span>.create&nbsp;(<span class="constructor">String</span>.length&nbsp;s&nbsp;*&nbsp;2)&nbsp;<span class="keyword">in</span><br>
+&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;to_nfd_and_utf_8&nbsp;=<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;n&nbsp;=&nbsp;<span class="constructor">Uunf</span>.create&nbsp;<span class="keywordsign">`</span><span class="constructor">NFD</span>&nbsp;<span class="keyword">in</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;<span class="keyword">rec</span>&nbsp;add&nbsp;v&nbsp;=&nbsp;<span class="keyword">match</span>&nbsp;<span class="constructor">Uunf</span>.add&nbsp;n&nbsp;v&nbsp;<span class="keyword">with</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Await</span>&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Uchar</span>&nbsp;u&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Uutf</span>.<span class="constructor">Buffer</span>.add_utf_8&nbsp;b&nbsp;u;&nbsp;add&nbsp;<span class="keywordsign">`</span><span class="constructor">Await</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">in</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;add<br>
+&nbsp;&nbsp;<span class="keyword">in</span><br>
+&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;add&nbsp;=<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;n&nbsp;=&nbsp;<span class="constructor">Uunf</span>.create&nbsp;<span class="keywordsign">`</span><span class="constructor">NFD</span>&nbsp;<span class="keyword">in</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;<span class="keyword">rec</span>&nbsp;add&nbsp;v&nbsp;=&nbsp;<span class="keyword">match</span>&nbsp;<span class="constructor">Uunf</span>.add&nbsp;n&nbsp;v&nbsp;<span class="keyword">with</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Await</span>&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Uchar</span>&nbsp;u&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">begin</span>&nbsp;<span class="keyword">match</span>&nbsp;<span class="constructor">Uucp</span>.<span class="constructor">Case</span>.<span class="constructor">Fold</span>.fold&nbsp;u&nbsp;<span class="keyword">with</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Self</span>&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;to_nfd_and_utf_8&nbsp;(<span class="keywordsign">`</span><span class="constructor">Uchar</span>&nbsp;u)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Uchars</span>&nbsp;us&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">List</span>.iter&nbsp;(<span class="keyword">fun</span>&nbsp;u&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;to_nfd_and_utf_8&nbsp;(<span class="keywordsign">`</span><span class="constructor">Uchar</span>&nbsp;u))&nbsp;us<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">end</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;add&nbsp;<span class="keywordsign">`</span><span class="constructor">Await</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">in</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;add<br>
+&nbsp;&nbsp;<span class="keyword">in</span><br>
+&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;add_uchar&nbsp;_&nbsp;_&nbsp;=&nbsp;<span class="keyword">function</span><br>
+&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Malformed</span>&nbsp;&nbsp;_&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;add&nbsp;(<span class="keywordsign">`</span><span class="constructor">Uchar</span>&nbsp;<span class="constructor">Uutf</span>.u_rep)<br>
+&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Uchar</span>&nbsp;_&nbsp;<span class="keyword">as</span>&nbsp;u&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;add&nbsp;u<br>
+&nbsp;&nbsp;<span class="keyword">in</span><br>
+&nbsp;&nbsp;<span class="constructor">Uutf</span>.<span class="constructor">String</span>.fold_utf_8&nbsp;add_uchar&nbsp;()&nbsp;s;<br>
+&nbsp;&nbsp;add&nbsp;<span class="keywordsign">`</span><span class="constructor">End</span>;<br>
+&nbsp;&nbsp;to_nfd_and_utf_8&nbsp;<span class="keywordsign">`</span><span class="constructor">End</span>;<br>
+&nbsp;&nbsp;<span class="constructor">Buffer</span>.contents&nbsp;b<br>
+<br>
+<span class="keyword">let</span>&nbsp;canonical_caseless_eq&nbsp;s0&nbsp;s1&nbsp;=<br>
+&nbsp;&nbsp;canonical_caseless_key&nbsp;s0&nbsp;=&nbsp;canonical_caseless_key&nbsp;s1<br>
+</code></pre>
+      Unicode's caseless matching for identifiers (D147, see also
+      <a href="http://www.unicode.org/reports/tr31/">UAX 31</a>) is defined
+      by normalizing to NFD, applying the NFKC_Casefold mapping and test
+      the result for binary equality:
+<pre class="codepre"><code class="code"><span class="keyword">let</span>&nbsp;id_caseless_key&nbsp;s&nbsp;=<br>
+&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;b&nbsp;=&nbsp;<span class="constructor">Buffer</span>.create&nbsp;(<span class="constructor">String</span>.length&nbsp;s&nbsp;*&nbsp;3)&nbsp;<span class="keyword">in</span><br>
+&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;n&nbsp;=&nbsp;<span class="constructor">Uunf</span>.create&nbsp;<span class="keywordsign">`</span><span class="constructor">NFD</span>&nbsp;<span class="keyword">in</span><br>
+&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;<span class="keyword">rec</span>&nbsp;add&nbsp;v&nbsp;=&nbsp;<span class="keyword">match</span>&nbsp;<span class="constructor">Uunf</span>.add&nbsp;n&nbsp;v&nbsp;<span class="keyword">with</span><br>
+&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Await</span>&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;()<br>
+&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Uchar</span>&nbsp;u&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">begin</span>&nbsp;<span class="keyword">match</span>&nbsp;<span class="constructor">Uucp</span>.<span class="constructor">Case</span>.<span class="constructor">Nfkc_fold</span>.fold&nbsp;u&nbsp;<span class="keyword">with</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Self</span>&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Uutf</span>.<span class="constructor">Buffer</span>.add_utf_8&nbsp;b&nbsp;u;&nbsp;add&nbsp;<span class="keywordsign">`</span><span class="constructor">Await</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Uchars</span>&nbsp;us&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">List</span>.iter&nbsp;(<span class="constructor">Uutf</span>.<span class="constructor">Buffer</span>.add_utf_8&nbsp;b)&nbsp;us;&nbsp;add&nbsp;<span class="keywordsign">`</span><span class="constructor">Await</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">end</span><br>
+&nbsp;&nbsp;<span class="keyword">in</span><br>
+&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;add_uchar&nbsp;_&nbsp;_&nbsp;=&nbsp;<span class="keyword">function</span><br>
+&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Malformed</span>&nbsp;&nbsp;_&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;add&nbsp;(<span class="keywordsign">`</span><span class="constructor">Uchar</span>&nbsp;<span class="constructor">Uutf</span>.u_rep)<br>
+&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Uchar</span>&nbsp;_&nbsp;<span class="keyword">as</span>&nbsp;u&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;add&nbsp;u<br>
+&nbsp;&nbsp;<span class="keyword">in</span><br>
+&nbsp;&nbsp;<span class="constructor">Uutf</span>.<span class="constructor">String</span>.fold_utf_8&nbsp;add_uchar&nbsp;()&nbsp;s;<br>
+&nbsp;&nbsp;add&nbsp;<span class="keywordsign">`</span><span class="constructor">End</span>;<br>
+&nbsp;&nbsp;<span class="constructor">Buffer</span>.contents&nbsp;b<br>
+<br>
+<span class="keyword">let</span>&nbsp;id_caseless_eq&nbsp;s0&nbsp;s1&nbsp;=&nbsp;id_caseless_key&nbsp;s0&nbsp;=&nbsp;id_caseless_key&nbsp;s1<br>
+</code></pre><br>
+</body></html>

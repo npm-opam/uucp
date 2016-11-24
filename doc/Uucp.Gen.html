@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Uucp.Gc.html">
+<link rel="next" href="Uucp.Id.html">
+<link rel="Up" href="Uucp.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Uucp" rel="Chapter" href="Uucp.html"><link title="General properties" rel="Section" href="#genprops">
+<title>Uucp.Gen</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Uucp.Gc.html" title="Uucp.Gc">Previous</a>
+&nbsp;<a class="up" href="Uucp.html" title="Uucp">Up</a>
+&nbsp;<a class="post" href="Uucp.Id.html" title="Uucp.Id">Next</a>
+</div>
+<h1>Module <a href="type_Uucp.Gen.html">Uucp.Gen</a></h1>
+
+<pre><span class="keyword">module</span> Gen: <code class="code"><span class="keyword">sig</span></code> <a href="Uucp.Gen.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+General properties.<br>
+</div>
+<hr width="100%">
+<br>
+<h1 id="genprops">General properties</h1><br>
+
+<pre><span id="VALis_default_ignorable"><span class="keyword">val</span> is_default_ignorable</span> : <code class="type"><a href="Uucp.html#TYPEuchar">Uucp.uchar</a> -> bool</code></pre><div class="info ">
+<code class="code">is_default_ignorable u</code> is <code class="code"><span class="keyword">true</span></code> if <code class="code">u</code> has the
+      <a href="http://www.unicode.org/reports/tr44/#Default_Ignorable_Code_Point">
+       Default_Ignorable_Code_Point</a> property.<br>
+</div>
+
+<pre><span id="VALis_deprecated"><span class="keyword">val</span> is_deprecated</span> : <code class="type"><a href="Uucp.html#TYPEuchar">Uucp.uchar</a> -> bool</code></pre><div class="info ">
+<code class="code">is_deprecated u</code> is <code class="code"><span class="keyword">true</span></code> if <code class="code">u</code> has the
+      <a href="http://www.unicode.org/reports/tr44/#Deprecated">
+       Deprecated</a> property.<br>
+</div>
+
+<pre><span id="VALis_logical_order_exception"><span class="keyword">val</span> is_logical_order_exception</span> : <code class="type"><a href="Uucp.html#TYPEuchar">Uucp.uchar</a> -> bool</code></pre><div class="info ">
+<code class="code">is_logical_order_exception u</code> is <code class="code"><span class="keyword">true</span></code> if <code class="code">u</code> has the
+      <a href="http://www.unicode.org/reports/tr44/#Logical_Order_Exception">
+      Logical_Order_Exception</a> property.<br>
+</div>
+
+<pre><span id="VALis_non_character"><span class="keyword">val</span> is_non_character</span> : <code class="type"><a href="Uucp.html#TYPEuchar">Uucp.uchar</a> -> bool</code></pre><div class="info ">
+<code class="code">is_non_character u</code> is <code class="code"><span class="keyword">true</span></code> if <code class="code">u</code> has the
+      <a href="http://www.unicode.org/reports/tr44/#Noncharacter_Code_Point">
+      Noncharacter_Code_Point</a> property.<br>
+</div>
+
+<pre><span id="VALis_variation_selector"><span class="keyword">val</span> is_variation_selector</span> : <code class="type"><a href="Uucp.html#TYPEuchar">Uucp.uchar</a> -> bool</code></pre><div class="info ">
+<code class="code">is_variation_selector u</code> is <code class="code"><span class="keyword">true</span></code> if <code class="code">u</code> has the
+      <a href="http://www.unicode.org/reports/tr44/#Variation_Selector">
+      Variation_Selector</a> property. See the
+      <a href="http://www.unicode.org/faq/vs.html">Variation Sequences FAQ</a>.<br>
+</div>
+</body></html>

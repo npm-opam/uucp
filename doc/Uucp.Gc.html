@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Uucp.Func.html">
+<link rel="next" href="Uucp.Gen.html">
+<link rel="Up" href="Uucp.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Uucp" rel="Chapter" href="Uucp.html"><link title="General category property" rel="Section" href="#gcprop">
+<title>Uucp.Gc</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Uucp.Func.html" title="Uucp.Func">Previous</a>
+&nbsp;<a class="up" href="Uucp.html" title="Uucp">Up</a>
+&nbsp;<a class="post" href="Uucp.Gen.html" title="Uucp.Gen">Next</a>
+</div>
+<h1>Module <a href="type_Uucp.Gc.html">Uucp.Gc</a></h1>
+
+<pre><span class="keyword">module</span> Gc: <code class="code"><span class="keyword">sig</span></code> <a href="Uucp.Gc.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+General category property.<br>
+</div>
+<hr width="100%">
+<br>
+<h1 id="gcprop">General category property</h1><br>
+
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type">[ `Cc<br>       | `Cf<br>       | `Cn<br>       | `Co<br>       | `Cs<br>       | `Ll<br>       | `Lm<br>       | `Lo<br>       | `Lt<br>       | `Lu<br>       | `Mc<br>       | `Me<br>       | `Mn<br>       | `Nd<br>       | `Nl<br>       | `No<br>       | `Pc<br>       | `Pd<br>       | `Pe<br>       | `Pf<br>       | `Pi<br>       | `Po<br>       | `Ps<br>       | `Sc<br>       | `Sk<br>       | `Sm<br>       | `So<br>       | `Zl<br>       | `Zp<br>       | `Zs ]</code> </pre>
+<div class="info ">
+The type for general categories.<br>
+</div>
+
+
+<pre><span id="VALcompare"><span class="keyword">val</span> compare</span> : <code class="type"><a href="Uucp.Gc.html#TYPEt">t</a> -> <a href="Uucp.Gc.html#TYPEt">t</a> -> int</code></pre><div class="info ">
+<code class="code">compare c c'</code> is <code class="code"><span class="constructor">Pervasives</span>.compare s s'</code>.<br>
+</div>
+
+<pre><span id="VALpp"><span class="keyword">val</span> pp</span> : <code class="type">Format.formatter -> <a href="Uucp.Gc.html#TYPEt">t</a> -> unit</code></pre><div class="info ">
+<code class="code">pp ppf c</code> prints an unspecified representation of <code class="code">c</code> on <code class="code">ppf</code>.<br>
+</div>
+
+<pre><span id="VALgeneral_category"><span class="keyword">val</span> general_category</span> : <code class="type"><a href="Uucp.html#TYPEuchar">Uucp.uchar</a> -> <a href="Uucp.Gc.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">general_category u</code> is <code class="code">u</code>'s
+      <a href="http://www.unicode.org/reports/tr44/#General_Category">
+      General_Category</a> property.<br>
+</div>
+</body></html>

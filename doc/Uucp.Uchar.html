@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="next" href="Uucp.Age.html">
+<link rel="Up" href="Uucp.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Uucp" rel="Chapter" href="Uucp.html"><link title="Characters" rel="Section" href="#uchars">
+<link title="Full Unicode character set traversal" rel="Section" href="#traversal">
+<link title="Printers" rel="Section" href="#printers">
+<title>Uucp.Uchar</title>
+</head>
+<body>
+<div class="navbar">&nbsp;<a class="up" href="Uucp.html" title="Uucp">Up</a>
+&nbsp;<a class="post" href="Uucp.Age.html" title="Uucp.Age">Next</a>
+</div>
+<h1>Module <a href="type_Uucp.Uchar.html">Uucp.Uchar</a></h1>
+
+<pre><span class="keyword">module</span> Uchar: <code class="code"><span class="keyword">sig</span></code> <a href="Uucp.Uchar.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+Characters.<br>
+</div>
+<hr width="100%">
+<br>
+<h1 id="uchars">Characters</h1><br>
+
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Uucp.html#TYPEuchar">Uucp.uchar</a></code> </pre>
+<div class="info ">
+The type for characters. See <a href="Uucp.html#TYPEuchar"><code class="code"><span class="constructor">Uucp</span>.uchar</code></a>.<br>
+</div>
+
+
+<pre><span id="VALmin"><span class="keyword">val</span> min</span> : <code class="type"><a href="Uucp.html#TYPEuchar">Uucp.uchar</a></code></pre><div class="info ">
+<code class="code">min</code> is U+0000.<br>
+</div>
+
+<pre><span id="VALmax"><span class="keyword">val</span> max</span> : <code class="type"><a href="Uucp.html#TYPEuchar">Uucp.uchar</a></code></pre><div class="info ">
+<code class="code">max</code> is U+10FFFF.<br>
+</div>
+
+<pre><span id="VALis_uchar"><span class="keyword">val</span> is_uchar</span> : <code class="type">int -> bool</code></pre><div class="info ">
+<code class="code">is_uchar n</code> is <code class="code"><span class="keyword">true</span></code> iff <code class="code">n</code> is an Unicode
+      <a href="http://www.unicode.org/glossary/#Unicode_scalar_value">scalar value</a>.<br>
+</div>
+
+<pre><span id="VALsucc"><span class="keyword">val</span> succ</span> : <code class="type"><a href="Uucp.html#TYPEuchar">Uucp.uchar</a> -> <a href="Uucp.html#TYPEuchar">Uucp.uchar</a></code></pre><div class="info ">
+<code class="code">succ u</code> is the scalar value after <code class="code">u</code> in the set of Unicode scalar
+      values.<br>
+<b>Raises</b> <code>Invalid_argument</code> if <code class="code">u</code> is <a href="Uucp.Uchar.html#VALmax"><code class="code"><span class="constructor">Uucp</span>.<span class="constructor">Uchar</span>.max</code></a>.<br>
+</div>
+
+<pre><span id="VALpred"><span class="keyword">val</span> pred</span> : <code class="type"><a href="Uucp.html#TYPEuchar">Uucp.uchar</a> -> <a href="Uucp.html#TYPEuchar">Uucp.uchar</a></code></pre><div class="info ">
+<code class="code">pred u</code> is the scalar value before <code class="code">u</code> in the set of Unicode scalar
+      values.<br>
+<b>Raises</b> <code>Invalid_argument</code> if <code class="code">u</code> is <a href="Uucp.Uchar.html#VALmin"><code class="code"><span class="constructor">Uucp</span>.<span class="constructor">Uchar</span>.min</code></a>.<br>
+</div>
+
+<pre><span id="VALof_int"><span class="keyword">val</span> of_int</span> : <code class="type">int -> <a href="Uucp.html#TYPEuchar">Uucp.uchar</a></code></pre><div class="info ">
+<code class="code">of_int i</code> is <code class="code">i</code> as an uchar.<br>
+<b>Raises</b> <code>Invalid_argument</code> if <code class="code">i</code> does not satisfy <a href="Uucp.Uchar.html#VALis_uchar"><code class="code"><span class="constructor">Uucp</span>.<span class="constructor">Uchar</span>.is_uchar</code></a>.<br>
+</div>
+
+<pre><span id="VALto_int"><span class="keyword">val</span> to_int</span> : <code class="type"><a href="Uucp.html#TYPEuchar">Uucp.uchar</a> -> int</code></pre><div class="info ">
+<code class="code">to_int u</code> is the scalar value of <code class="code">u</code> as an integer.<br>
+</div>
+
+<pre><span id="VALequal"><span class="keyword">val</span> equal</span> : <code class="type"><a href="Uucp.html#TYPEuchar">Uucp.uchar</a> -> <a href="Uucp.html#TYPEuchar">Uucp.uchar</a> -> bool</code></pre><div class="info ">
+<code class="code">equal u u'</code> is <code class="code">u = u')</code>.<br>
+</div>
+
+<pre><span id="VALcompare"><span class="keyword">val</span> compare</span> : <code class="type"><a href="Uucp.html#TYPEuchar">Uucp.uchar</a> -> <a href="Uucp.html#TYPEuchar">Uucp.uchar</a> -> int</code></pre><div class="info ">
+<code class="code">compare u u'</code> is <code class="code"><span class="constructor">Pervasives</span>.compare u u'</code>.<br>
+</div>
+<br>
+<h1 id="traversal">Full Unicode character set traversal</h1><br>
+
+<pre><span id="VALfold"><span class="keyword">val</span> fold</span> : <code class="type">('a -> <a href="Uucp.html#TYPEuchar">Uucp.uchar</a> -> 'a) -> 'a -> 'a</code></pre><div class="info ">
+<code class="code">fold f acc</code> is
+      <code class="code">(f (…(f (f (…(f (f acc 0x0000) 0x0001…) 0xD7FF) 0xE000)…) 0x10FFFF)</code><br>
+</div>
+
+<pre><span id="VALiter"><span class="keyword">val</span> iter</span> : <code class="type">(<a href="Uucp.html#TYPEuchar">Uucp.uchar</a> -> unit) -> unit</code></pre><div class="info ">
+<code class="code">iter f</code> is <code class="code">f 0x0000; f0x0001; …; f 0xD7FF; f 0xE000; …; f 0x10FFFF</code><br>
+</div>
+<br>
+<h1 id="printers">Printers</h1><br>
+
+<pre><span id="VALpp"><span class="keyword">val</span> pp</span> : <code class="type">Format.formatter -> <a href="Uucp.html#TYPEuchar">Uucp.uchar</a> -> unit</code></pre><div class="info ">
+<code class="code">pp ppf u</code> prints <code class="code">u</code> on <code class="code">ppf</code> using only US-ASCII encoded
+      characters according to the Unicode notational convention.<br>
+</div>
+</body></html>

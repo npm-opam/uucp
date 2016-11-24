@@ -1,0 +1,81 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Uucp.Name.html">
+<link rel="next" href="Uucp.Script.html">
+<link rel="Up" href="Uucp.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Uucp" rel="Chapter" href="Uucp.html"><link title="Hex digits" rel="Section" href="#hexprop">
+<link title="Numeric type" rel="Section" href="#numtypeprop">
+<link title="Numeric value" rel="Section" href="#numvalueprop">
+<title>Uucp.Num</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Uucp.Name.html" title="Uucp.Name">Previous</a>
+&nbsp;<a class="up" href="Uucp.html" title="Uucp">Up</a>
+&nbsp;<a class="post" href="Uucp.Script.html" title="Uucp.Script">Next</a>
+</div>
+<h1>Module <a href="type_Uucp.Num.html">Uucp.Num</a></h1>
+
+<pre><span class="keyword">module</span> Num: <code class="code"><span class="keyword">sig</span></code> <a href="Uucp.Num.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+Numeric properties.<br>
+</div>
+<hr width="100%">
+<br>
+<h1 id="hexprop">Hex digits</h1><br>
+
+<pre><span id="VALis_ascii_hex_digit"><span class="keyword">val</span> is_ascii_hex_digit</span> : <code class="type"><a href="Uucp.html#TYPEuchar">Uucp.uchar</a> -> bool</code></pre><div class="info ">
+<code class="code">is_ascii_hex_digit u</code> is <code class="code"><span class="keyword">true</span></code> if <code class="code">u</code> has the
+      <a href="http://www.unicode.org/reports/tr44/#ASCII_Hex_Digit">ASCII_Hex_Digit</a>
+      property.<br>
+</div>
+
+<pre><span id="VALis_hex_digit"><span class="keyword">val</span> is_hex_digit</span> : <code class="type"><a href="Uucp.html#TYPEuchar">Uucp.uchar</a> -> bool</code></pre><div class="info ">
+<code class="code">is_ascii_hex_digit u</code> is <code class="code"><span class="keyword">true</span></code> if <code class="code">u</code> has the
+      <a href="http://www.unicode.org/reports/tr44/#Hex_Digit">Hex_Digit</a>
+      property.<br>
+</div>
+<br>
+<h1 id="numtypeprop">Numeric type</h1><br>
+
+<pre><span id="TYPEnumeric_type"><span class="keyword">type</span> <code class="type"></code>numeric_type</span> = <code class="type">[ `De | `Di | `None | `Nu ]</code> </pre>
+<div class="info ">
+The type for numeric types.<br>
+</div>
+
+
+<pre><span id="VALpp_numeric_type"><span class="keyword">val</span> pp_numeric_type</span> : <code class="type">Format.formatter -> <a href="Uucp.Num.html#TYPEnumeric_type">numeric_type</a> -> unit</code></pre><div class="info ">
+<code class="code">pp_numeric_type ppf n</code> prints an unspecified representation of
+      <code class="code">n</code> on <code class="code">ppf</code>.<br>
+</div>
+
+<pre><span id="VALnumeric_type"><span class="keyword">val</span> numeric_type</span> : <code class="type"><a href="Uucp.html#TYPEuchar">Uucp.uchar</a> -> <a href="Uucp.Num.html#TYPEnumeric_type">numeric_type</a></code></pre><div class="info ">
+<code class="code">numeric_type u</code> is <code class="code">u</code>'s
+      <a href="http://www.unicode.org/reports/tr44/#Numeric_Type">
+      Numeric_Type</a> property.<br>
+</div>
+<br>
+<h1 id="numvalueprop">Numeric value</h1><br>
+
+<pre><span id="TYPEnumeric_value"><span class="keyword">type</span> <code class="type"></code>numeric_value</span> = <code class="type">[ `Frac of int * int | `NaN | `Num of int64 ]</code> </pre>
+<div class="info ">
+The type for numeric values.<br>
+</div>
+
+
+<pre><span id="VALpp_numeric_value"><span class="keyword">val</span> pp_numeric_value</span> : <code class="type">Format.formatter -> <a href="Uucp.Num.html#TYPEnumeric_value">numeric_value</a> -> unit</code></pre><div class="info ">
+<code class="code">pp_numeric_value ppf n</code> prints an unspecified representation of
+      <code class="code">n</code> on <code class="code">ppf</code>.<br>
+</div>
+
+<pre><span id="VALnumeric_value"><span class="keyword">val</span> numeric_value</span> : <code class="type"><a href="Uucp.html#TYPEuchar">Uucp.uchar</a> -> [ `Frac of int * int | `NaN | `Num of int64 ]</code></pre><div class="info ">
+<code class="code">numeric_type u</code> is <code class="code">u</code>'s
+      <a href="http://www.unicode.org/reports/tr44/#Numeric_Value">
+      Numeric_Value</a> property.<br>
+</div>
+</body></html>

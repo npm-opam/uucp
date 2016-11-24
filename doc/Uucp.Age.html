@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Uucp.Uchar.html">
+<link rel="next" href="Uucp.Alpha.html">
+<link rel="Up" href="Uucp.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Uucp" rel="Chapter" href="Uucp.html"><link title="Age property" rel="Section" href="#ageprop">
+<title>Uucp.Age</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Uucp.Uchar.html" title="Uucp.Uchar">Previous</a>
+&nbsp;<a class="up" href="Uucp.html" title="Uucp">Up</a>
+&nbsp;<a class="post" href="Uucp.Alpha.html" title="Uucp.Alpha">Next</a>
+</div>
+<h1>Module <a href="type_Uucp.Age.html">Uucp.Age</a></h1>
+
+<pre><span class="keyword">module</span> Age: <code class="code"><span class="keyword">sig</span></code> <a href="Uucp.Age.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+Age property.<br>
+</div>
+<hr width="100%">
+<br>
+<h1 id="ageprop">Age property</h1><br>
+
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type">[ `Unassigned | `Version of int * int ]</code> </pre>
+<div class="info ">
+The type for character age.<br>
+</div>
+
+
+<pre><span id="VALcompare"><span class="keyword">val</span> compare</span> : <code class="type"><a href="Uucp.Age.html#TYPEt">t</a> -> <a href="Uucp.Age.html#TYPEt">t</a> -> int</code></pre><div class="info ">
+<code class="code">compare a a'</code> is <code class="code"><span class="constructor">Pervasives</span>.compare a a'</code><br>
+</div>
+
+<pre><span id="VALpp"><span class="keyword">val</span> pp</span> : <code class="type">Format.formatter -> <a href="Uucp.Age.html#TYPEt">t</a> -> unit</code></pre><div class="info ">
+<code class="code">pp ppf a</code> prints an unspecified representation of <code class="code">a</code> on <code class="code">ppf</code>.<br>
+</div>
+
+<pre><span id="VALage"><span class="keyword">val</span> age</span> : <code class="type"><a href="Uucp.html#TYPEuchar">Uucp.uchar</a> -> <a href="Uucp.Age.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">age u</code> is <code class="code">u</code>'s
+      <a href="http://www.unicode.org/reports/tr44/#Age">Age</a> property.<br>
+</div>
+</body></html>

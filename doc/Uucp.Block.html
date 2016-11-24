@@ -1,0 +1,63 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Uucp.Alpha.html">
+<link rel="next" href="Uucp.Break.html">
+<link rel="Up" href="Uucp.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Uucp" rel="Chapter" href="Uucp.html"><link title="Blocks" rel="Section" href="#blockprop">
+<title>Uucp.Block</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Uucp.Alpha.html" title="Uucp.Alpha">Previous</a>
+&nbsp;<a class="up" href="Uucp.html" title="Uucp">Up</a>
+&nbsp;<a class="post" href="Uucp.Break.html" title="Uucp.Break">Next</a>
+</div>
+<h1>Module <a href="type_Uucp.Block.html">Uucp.Block</a></h1>
+
+<pre><span class="keyword">module</span> Block: <code class="code"><span class="keyword">sig</span></code> <a href="Uucp.Block.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+Block property and block ranges.
+<p>
+
+    <h3 id="3_References">References</h3>
+    <ul>
+<li><a href="http://www.unicode.org/faq/blocks_ranges.html">The Unicode
+    blocks and ranges FAQ</a>.</li>
+</ul>
+<br>
+</div>
+<hr width="100%">
+<br>
+<h1 id="blockprop">Blocks</h1><br>
+
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type">[ `ASCII<br>       | `Aegean_Numbers<br>       | `Ahom<br>       | `Alchemical<br>       | `Alphabetic_PF<br>       | `Anatolian_Hieroglyphs<br>       | `Ancient_Greek_Music<br>       | `Ancient_Greek_Numbers<br>       | `Ancient_Symbols<br>       | `Arabic<br>       | `Arabic_Ext_A<br>       | `Arabic_Math<br>       | `Arabic_PF_A<br>       | `Arabic_PF_B<br>       | `Arabic_Sup<br>       | `Armenian<br>       | `Arrows<br>       | `Avestan<br>       | `Balinese<br>       | `Bamum<br>       | `Bamum_Sup<br>       | `Bassa_Vah<br>       | `Batak<br>       | `Bengali<br>       | `Block_Elements<br>       | `Bopomofo<br>       | `Bopomofo_Ext<br>       | `Box_Drawing<br>       | `Brahmi<br>       | `Braille<br>       | `Buginese<br>       | `Buhid<br>       | `Byzantine_Music<br>       | `CJK<br>       | `CJK_Compat<br>       | `CJK_Compat_Forms<br>       | `CJK_Compat_Ideographs<br>       | `CJK_Compat_Ideographs_Sup<br>       | `CJK_Ext_A<br>       | `CJK_Ext_B<br>       | `CJK_Ext_C<br>       | `CJK_Ext_D<br>       | `CJK_Ext_E<br>       | `CJK_Radicals_Sup<br>       | `CJK_Strokes<br>       | `CJK_Symbols<br>       | `Carian<br>       | `Caucasian_Albanian<br>       | `Chakma<br>       | `Cham<br>       | `Cherokee<br>       | `Cherokee_Sup<br>       | `Compat_Jamo<br>       | `Control_Pictures<br>       | `Coptic<br>       | `Coptic_Epact_Numbers<br>       | `Counting_Rod<br>       | `Cuneiform<br>       | `Cuneiform_Numbers<br>       | `Currency_Symbols<br>       | `Cypriot_Syllabary<br>       | `Cyrillic<br>       | `Cyrillic_Ext_A<br>       | `Cyrillic_Ext_B<br>       | `Cyrillic_Sup<br>       | `Deseret<br>       | `Devanagari<br>       | `Devanagari_Ext<br>       | `Diacriticals<br>       | `Diacriticals_Ext<br>       | `Diacriticals_For_Symbols<br>       | `Diacriticals_Sup<br>       | `Dingbats<br>       | `Domino<br>       | `Duployan<br>       | `Early_Dynastic_Cuneiform<br>       | `Egyptian_Hieroglyphs<br>       | `Elbasan<br>       | `Emoticons<br>       | `Enclosed_Alphanum<br>       | `Enclosed_Alphanum_Sup<br>       | `Enclosed_CJK<br>       | `Enclosed_Ideographic_Sup<br>       | `Ethiopic<br>       | `Ethiopic_Ext<br>       | `Ethiopic_Ext_A<br>       | `Ethiopic_Sup<br>       | `Geometric_Shapes<br>       | `Geometric_Shapes_Ext<br>       | `Georgian<br>       | `Georgian_Sup<br>       | `Glagolitic<br>       | `Gothic<br>       | `Grantha<br>       | `Greek<br>       | `Greek_Ext<br>       | `Gujarati<br>       | `Gurmukhi<br>       | `Half_And_Full_Forms<br>       | `Half_Marks<br>       | `Hangul<br>       | `Hanunoo<br>       | `Hatran<br>       | `Hebrew<br>       | `Hiragana<br>       | `IDC<br>       | `IPA_Ext<br>       | `Imperial_Aramaic<br>       | `Indic_Number_Forms<br>       | `Inscriptional_Pahlavi<br>       | `Inscriptional_Parthian<br>       | `Jamo<br>       | `Jamo_Ext_A<br>       | `Jamo_Ext_B<br>       | `Javanese<br>       | `Kaithi<br>       | `Kana_Sup<br>       | `Kanbun<br>       | `Kangxi<br>       | `Kannada<br>       | `Katakana<br>       | `Katakana_Ext<br>       | `Kayah_Li<br>       | `Kharoshthi<br>       | `Khmer<br>       | `Khmer_Symbols<br>       | `Khojki<br>       | `Khudawadi<br>       | `Lao<br>       | `Latin_1_Sup<br>       | `Latin_Ext_A<br>       | `Latin_Ext_Additional<br>       | `Latin_Ext_B<br>       | `Latin_Ext_C<br>       | `Latin_Ext_D<br>       | `Latin_Ext_E<br>       | `Lepcha<br>       | `Letterlike_Symbols<br>       | `Limbu<br>       | `Linear_A<br>       | `Linear_B_Ideograms<br>       | `Linear_B_Syllabary<br>       | `Lisu<br>       | `Lycian<br>       | `Lydian<br>       | `Mahajani<br>       | `Mahjong<br>       | `Malayalam<br>       | `Mandaic<br>       | `Manichaean<br>       | `Math_Alphanum<br>       | `Math_Operators<br>       | `Meetei_Mayek<br>       | `Meetei_Mayek_Ext<br>       | `Mende_Kikakui<br>       | `Meroitic_Cursive<br>       | `Meroitic_Hieroglyphs<br>       | `Miao<br>       | `Misc_Arrows<br>       | `Misc_Math_Symbols_A<br>       | `Misc_Math_Symbols_B<br>       | `Misc_Pictographs<br>       | `Misc_Symbols<br>       | `Misc_Technical<br>       | `Modi<br>       | `Modifier_Letters<br>       | `Modifier_Tone_Letters<br>       | `Mongolian<br>       | `Mro<br>       | `Multani<br>       | `Music<br>       | `Myanmar<br>       | `Myanmar_Ext_A<br>       | `Myanmar_Ext_B<br>       | `NB<br>       | `NKo<br>       | `Nabataean<br>       | `New_Tai_Lue<br>       | `Number_Forms<br>       | `OCR<br>       | `Ogham<br>       | `Ol_Chiki<br>       | `Old_Hungarian<br>       | `Old_Italic<br>       | `Old_North_Arabian<br>       | `Old_Permic<br>       | `Old_Persian<br>       | `Old_South_Arabian<br>       | `Old_Turkic<br>       | `Oriya<br>       | `Ornamental_Dingbats<br>       | `Osmanya<br>       | `PUA<br>       | `Pahawh_Hmong<br>       | `Palmyrene<br>       | `Pau_Cin_Hau<br>       | `Phags_Pa<br>       | `Phaistos<br>       | `Phoenician<br>       | `Phonetic_Ext<br>       | `Phonetic_Ext_Sup<br>       | `Playing_Cards<br>       | `Psalter_Pahlavi<br>       | `Punctuation<br>       | `Rejang<br>       | `Rumi<br>       | `Runic<br>       | `Samaritan<br>       | `Saurashtra<br>       | `Sharada<br>       | `Shavian<br>       | `Shorthand_Format_Controls<br>       | `Siddham<br>       | `Sinhala<br>       | `Sinhala_Archaic_Numbers<br>       | `Small_Forms<br>       | `Sora_Sompeng<br>       | `Specials<br>       | `Sundanese<br>       | `Sundanese_Sup<br>       | `Sup_Arrows_A<br>       | `Sup_Arrows_B<br>       | `Sup_Arrows_C<br>       | `Sup_Math_Operators<br>       | `Sup_PUA_A<br>       | `Sup_PUA_B<br>       | `Sup_Punctuation<br>       | `Sup_Symbols_And_Pictographs<br>       | `Super_And_Sub<br>       | `Sutton_SignWriting<br>       | `Syloti_Nagri<br>       | `Syriac<br>       | `Tagalog<br>       | `Tagbanwa<br>       | `Tags<br>       | `Tai_Le<br>       | `Tai_Tham<br>       | `Tai_Viet<br>       | `Tai_Xuan_Jing<br>       | `Takri<br>       | `Tamil<br>       | `Telugu<br>       | `Thaana<br>       | `Thai<br>       | `Tibetan<br>       | `Tifinagh<br>       | `Tirhuta<br>       | `Transport_And_Map<br>       | `UCAS<br>       | `UCAS_Ext<br>       | `Ugaritic<br>       | `VS<br>       | `VS_Sup<br>       | `Vai<br>       | `Vedic_Ext<br>       | `Vertical_Forms<br>       | `Warang_Citi<br>       | `Yi_Radicals<br>       | `Yi_Syllables<br>       | `Yijing ]</code> </pre>
+<div class="info ">
+The type for blocks. The value <code class="code"><span class="keywordsign">`</span><span class="constructor">NB</span></code> is for characters that are not
+      yassigned to a block.<br>
+</div>
+
+
+<pre><span id="VALcompare"><span class="keyword">val</span> compare</span> : <code class="type"><a href="Uucp.Block.html#TYPEt">t</a> -> <a href="Uucp.Block.html#TYPEt">t</a> -> int</code></pre><div class="info ">
+<code class="code">compare b b'</code> is <code class="code"><span class="constructor">Pervasives</span>.compare b b'</code>.<br>
+</div>
+
+<pre><span id="VALpp"><span class="keyword">val</span> pp</span> : <code class="type">Format.formatter -> <a href="Uucp.Block.html#TYPEt">t</a> -> unit</code></pre><div class="info ">
+<code class="code">pp ppf b</code> prints an unspecified representation of <code class="code">b</code> on <code class="code">ppf</code>.<br>
+</div>
+
+<pre><span id="VALblocks"><span class="keyword">val</span> blocks</span> : <code class="type">(<a href="Uucp.Block.html#TYPEt">t</a> * (<a href="Uucp.html#TYPEuchar">Uucp.uchar</a> * <a href="Uucp.html#TYPEuchar">Uucp.uchar</a>)) list</code></pre><div class="info ">
+<code class="code">blocks</code> is the list of blocks sorted by increasing range order.
+      Each block appears exactly once in the list except
+      <code class="code"><span class="keywordsign">`</span><span class="constructor">NB</span></code> which is not part of this list as it is not a block.<br>
+</div>
+
+<pre><span id="VALblock"><span class="keyword">val</span> block</span> : <code class="type"><a href="Uucp.html#TYPEuchar">Uucp.uchar</a> -> <a href="Uucp.Block.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">block u</code> is <code class="code">u</code>'s
+      <a href="http://www.unicode.org/reports/tr44/#Block">Block</a> property.<br>
+</div>
+</body></html>

@@ -1,0 +1,247 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Uucp.Block.html">
+<link rel="next" href="Uucp.Case.html">
+<link rel="Up" href="Uucp.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Uucp" rel="Chapter" href="Uucp.html"><link title="Line break" rel="Section" href="#line_break">
+<link title="Grapheme cluster break" rel="Section" href="#grapheme_cluster_break">
+<link title="Word break" rel="Section" href="#word_break">
+<link title="Sentence break" rel="Section" href="#sentence_break">
+<link title="East Asian width" rel="Section" href="#east_asian_width">
+<link title="Terminal width" rel="Section" href="#terminal_width">
+<link title="Low level interface" rel="Section" href="#break_low">
+<title>Uucp.Break</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Uucp.Block.html" title="Uucp.Block">Previous</a>
+&nbsp;<a class="up" href="Uucp.html" title="Uucp">Up</a>
+&nbsp;<a class="post" href="Uucp.Case.html" title="Uucp.Case">Next</a>
+</div>
+<h1>Module <a href="type_Uucp.Break.html">Uucp.Break</a></h1>
+
+<pre><span class="keyword">module</span> Break: <code class="code"><span class="keyword">sig</span></code> <a href="Uucp.Break.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+Break properties.
+<p>
+
+    These properties are mainly for the Unicode text segmentation and line
+    breaking algorithm.
+<p>
+
+    <h3 id="3_References">References</h3>
+    <ul>
+<li>Mark Davis.
+    <em><a href="http://www.unicode.org/reports/tr29/">UAX #29 Unicode Text
+    Segmentation</a></em>. (latest version)</li>
+<li>Andy Heninger.
+    <em><a href="http://www.unicode.org/reports/tr14/">UAX #14 Unicode Line Breaking
+    Algorithm</a></em>. (latest version)</li>
+<li>Ken Lunde 小林劍.
+    <em><a href="http://www.unicode.org/reports/tr11/">UAX #11 East Asian width.</a>
+    (latest version)</em></li>
+</ul>
+<br>
+</div>
+<hr width="100%">
+<br>
+<h1 id="line_break">Line break</h1><br>
+
+<pre><span id="TYPEline"><span class="keyword">type</span> <code class="type"></code>line</span> = <code class="type">[ `AI<br>       | `AL<br>       | `B2<br>       | `BA<br>       | `BB<br>       | `BK<br>       | `CB<br>       | `CJ<br>       | `CL<br>       | `CM<br>       | `CP<br>       | `CR<br>       | `EX<br>       | `GL<br>       | `H2<br>       | `H3<br>       | `HL<br>       | `HY<br>       | `ID<br>       | `IN<br>       | `IS<br>       | `JL<br>       | `JT<br>       | `JV<br>       | `LF<br>       | `NL<br>       | `NS<br>       | `NU<br>       | `OP<br>       | `PO<br>       | `PR<br>       | `QU<br>       | `RI<br>       | `SA<br>       | `SG<br>       | `SP<br>       | `SY<br>       | `WJ<br>       | `XX<br>       | `ZW ]</code> </pre>
+<div class="info ">
+The type for line breaks.<br>
+</div>
+
+
+<pre><span id="VALpp_line"><span class="keyword">val</span> pp_line</span> : <code class="type">Format.formatter -> <a href="Uucp.Break.html#TYPEline">line</a> -> unit</code></pre><div class="info ">
+<code class="code">pp_line ppf l</code> prints an unspecified representation of <code class="code">l</code> on
+      <code class="code">ppf</code>.<br>
+</div>
+
+<pre><span id="VALline"><span class="keyword">val</span> line</span> : <code class="type"><a href="Uucp.html#TYPEuchar">Uucp.uchar</a> -> <a href="Uucp.Break.html#TYPEline">line</a></code></pre><div class="info ">
+<code class="code">line u</code> is <code class="code">u</code>'s
+      <a href="http://www.unicode.org/reports/tr44/#Line_Break">line break</a>
+      property.<br>
+</div>
+<br>
+<h1 id="grapheme_cluster_break">Grapheme cluster break</h1><br>
+
+<pre><span id="TYPEgrapheme_cluster"><span class="keyword">type</span> <code class="type"></code>grapheme_cluster</span> = <code class="type">[ `CN | `CR | `EX | `L | `LF | `LV | `LVT | `PP | `RI | `SM | `T | `V | `XX ]</code> </pre>
+<div class="info ">
+The type for grapheme cluster breaks.<br>
+</div>
+
+
+<pre><span id="VALpp_grapheme_cluster"><span class="keyword">val</span> pp_grapheme_cluster</span> : <code class="type">Format.formatter -> <a href="Uucp.Break.html#TYPEgrapheme_cluster">grapheme_cluster</a> -> unit</code></pre><div class="info ">
+<code class="code">pp_grapheme_cluster ppf g</code> prints an unspecified representation of <code class="code">g</code>
+      on <code class="code">ppf</code>.<br>
+</div>
+
+<pre><span id="VALgrapheme_cluster"><span class="keyword">val</span> grapheme_cluster</span> : <code class="type"><a href="Uucp.html#TYPEuchar">Uucp.uchar</a> -> <a href="Uucp.Break.html#TYPEgrapheme_cluster">grapheme_cluster</a></code></pre><div class="info ">
+<code class="code">grapheme_cluster u</code> is <code class="code">u</code>'s
+      <a href="http://www.unicode.org/reports/tr44/#Grapheme_Cluster_Break">grapheme
+      cluster break</a> property.<br>
+</div>
+<br>
+<h1 id="word_break">Word break</h1><br>
+
+<pre><span id="TYPEword"><span class="keyword">type</span> <code class="type"></code>word</span> = <code class="type">[ `CR<br>       | `DQ<br>       | `EX<br>       | `Extend<br>       | `FO<br>       | `HL<br>       | `KA<br>       | `LE<br>       | `LF<br>       | `MB<br>       | `ML<br>       | `MN<br>       | `NL<br>       | `NU<br>       | `RI<br>       | `SQ<br>       | `XX ]</code> </pre>
+<div class="info ">
+The type for word breaks.<br>
+</div>
+
+
+<pre><span id="VALpp_word"><span class="keyword">val</span> pp_word</span> : <code class="type">Format.formatter -> <a href="Uucp.Break.html#TYPEword">word</a> -> unit</code></pre><div class="info ">
+<code class="code">pp_grapheme_cluster ppf g</code> prints an unspecified representation of <code class="code">g</code>
+      on <code class="code">ppf</code>.<br>
+</div>
+
+<pre><span id="VALword"><span class="keyword">val</span> word</span> : <code class="type"><a href="Uucp.html#TYPEuchar">Uucp.uchar</a> -> <a href="Uucp.Break.html#TYPEword">word</a></code></pre><div class="info ">
+<code class="code">world u</code> is <code class="code">u</code>'s
+      <a href="http://www.unicode.org/reports/tr44/#Word_Break">word break</a>
+      property.<br>
+</div>
+<br>
+<h1 id="sentence_break">Sentence break</h1><br>
+
+<pre><span id="TYPEsentence"><span class="keyword">type</span> <code class="type"></code>sentence</span> = <code class="type">[ `AT<br>       | `CL<br>       | `CR<br>       | `EX<br>       | `FO<br>       | `LE<br>       | `LF<br>       | `LO<br>       | `NU<br>       | `SC<br>       | `SE<br>       | `SP<br>       | `ST<br>       | `UP<br>       | `XX ]</code> </pre>
+<div class="info ">
+The type for sentence breaks.<br>
+</div>
+
+
+<pre><span id="VALpp_sentence"><span class="keyword">val</span> pp_sentence</span> : <code class="type">Format.formatter -> <a href="Uucp.Break.html#TYPEsentence">sentence</a> -> unit</code></pre><div class="info ">
+<code class="code">pp_grapheme_cluster ppf g</code> prints an unspecified representation of <code class="code">g</code>
+      on <code class="code">ppf</code>.<br>
+</div>
+
+<pre><span id="VALsentence"><span class="keyword">val</span> sentence</span> : <code class="type"><a href="Uucp.html#TYPEuchar">Uucp.uchar</a> -> <a href="Uucp.Break.html#TYPEsentence">sentence</a></code></pre><div class="info ">
+<code class="code">sentence u</code> is <code class="code">u</code>'s
+      <a href="http://www.unicode.org/reports/tr44/#Sentence_Break">sentence break</a>
+      property.<br>
+</div>
+<br>
+<h1 id="east_asian_width">East Asian width</h1><br>
+
+<pre><span id="TYPEeast_asian_width"><span class="keyword">type</span> <code class="type"></code>east_asian_width</span> = <code class="type">[ `A | `F | `H | `N | `Na | `W ]</code> </pre>
+<div class="info ">
+The type for East Asian widths.<br>
+</div>
+
+
+<pre><span id="VALpp_east_asian_width"><span class="keyword">val</span> pp_east_asian_width</span> : <code class="type">Format.formatter -> <a href="Uucp.Break.html#TYPEeast_asian_width">east_asian_width</a> -> unit</code></pre><div class="info ">
+<code class="code">pp_east_asian_width ppf w</code> prints an unspecified representation of
+      <code class="code">w</code> on <code class="code">ppf</code>.<br>
+</div>
+
+<pre><span id="VALeast_asian_width"><span class="keyword">val</span> east_asian_width</span> : <code class="type"><a href="Uucp.html#TYPEuchar">Uucp.uchar</a> -> <a href="Uucp.Break.html#TYPEeast_asian_width">east_asian_width</a></code></pre><div class="info ">
+<code class="code">east_asian_width u</code> is <code class="code">u</code>'s
+      <a href="http://www.unicode.org/reports/tr44/#East_Asian_Width">East Asian
+      width</a> property.<br>
+</div>
+<br>
+<h1 id="terminal_width">Terminal width</h1><br>
+
+<pre><span id="VALtty_width_hint"><span class="keyword">val</span> tty_width_hint</span> : <code class="type"><a href="Uucp.html#TYPEuchar">Uucp.uchar</a> -> int</code></pre><div class="info ">
+<code class="code">tty_width_hint u</code> approximates <code class="code">u</code>'s column width as rendered by a
+      typical character terminal.
+<p>
+
+      The current implementation of the function returns either <code class="code">0</code>,
+      <code class="code">1</code>, <code class="code">2</code> or <code class="code">-1</code>. The value <code class="code">-1</code> is only returned for scalar
+      values for which the property is non-sensical; clients are
+      expected to sanitize their inputs and not to use the function
+      with these scalar values which are those in range U+0001-U+001F
+      (<b>C0</b> controls without U+0000) and U+007F-U+009F (DELETE and
+      <b>C1</b> controls).
+<p>
+
+      <b>Note.</b> Converting a string to
+      <a href="http://unicode.org/glossary/#normalization_form_c">normalization
+      form C</a> before folding this function over its scalar values
+      will, in general, yield better approximations (e.g. on Hangul).
+<p>
+
+      <b>Warning.</b> This is not a normative property and only a
+      heuristic. If you find yourself using this function please read
+      carefully the following lines.
+<p>
+
+      This function is the moral equivalent of POSIX
+      <a href="http://pubs.opengroup.org/onlinepubs/9699919799/functions/wcwidth.html">
+      <code class="code">wcwidth</code></a>, in that its purpose is to help align text displayed by a
+      character terminal. It mimics <code class="code">wcwidth</code>, as widely implemented, in yet
+      another way: it is <em>mostly wrong</em>.
+<p>
+
+      Computing column width is a surprisingly difficult task in general. Much
+      of the software infrastructure still carries legacy assumptions about the
+      nature of text harking back to the ASCII era. Different terminal emulators
+      attempt to cope with general Unicode text in different ways, creating a
+      fundamental problem: width of text fragments will vary across terminal
+      emulators, with no way of getting feedback from the output layer back
+      into the text-producing layer.
+<p>
+
+      For example: on a modern Linux system, a collection of terminals
+      will disagree on some or all of U+00AD, U+0CBF, and
+      U+2029. They will likewise disagree about unassigned
+      characters (category <em>Cn</em>), sometimes contradicting the
+      system's <code class="code">wcwidth</code> (e.g. U+0378, U+0530).  Terminals using
+      bare <a href="http://cgit.freedesktop.org/xorg/lib/libXft">libxft</a>
+      will display complex scripts differently from terminals using
+      <a href="http://www.freedesktop.org/wiki/Software/HarfBuzz">HarfBuzz</a>,
+      and the rendering on OS X will be slightly different from both.
+<p>
+
+      <code class="code">tty_width_hint</code> uses a simple and predictable width algorithm, based
+      on Markus Kuhn's <a href="https://www.cl.cam.ac.uk/~mgk25/ucs/wcwidth.c">
+      portable <code class="code">wcwidth</code></a>:
+      <ul>
+<li>Scalar values in the ranges U+0001-U+001F (<b>C0</b> controls without
+         U+0000) and U+007F-U+009F (DELETE and <b>C1</b> controls) have undefined
+         width (<code class="code">-1</code>).</li>
+<li>Characters with <a href="http://www.unicode.org/reports/tr11/tr11-29.html">
+         East Asian Width</a> <em>Fullwidth</em> or <em>Wide</em> have a width of <code class="code">2</code>.</li>
+<li>Characters with
+         <a href="http://unicode.org/glossary/#general_category">General Category</a>
+         <em>Mn</em>, <em>Me</em>, <em>Cf</em> and U+0000 have a width of <code class="code">0</code>.</li>
+<li><em>Most</em> other characters have a width of <code class="code">1</code>, including <em>Cn</em>.</li>
+</ul>
+
+<p>
+
+      This approach works well, in that it gives results generally consistent
+      with a wide range of terminals, for
+      <a href="https://en.wikipedia.org/wiki/Alphabet">alphabetic</a> scripts, and for
+      east Asian <a href="https://en.wikipedia.org/wiki/Syllabary">syllabic</a> and
+      <a href="https://en.wikipedia.org/wiki/Logogram">logographic</a> scripts in
+      non-decomposed form. Support varies for
+      <a href="https://en.wikipedia.org/wiki/Abjad">abjad</a> scripts in the presence of
+      vowel marks, and it mostly breaks down on
+      <a href="https://en.wikipedia.org/wiki/Abugida">abugidas</a>.
+<p>
+
+      Moreover, non-text symbols like
+      <a href="http://unicode.org/emoji/charts/full-emoji-list.html">Emoji</a>
+      or <a href="http://unicode.org/charts/PDF/U4DC0.pdf">Yijing hexagrams</a>
+      will be incorrectly classified as <code class="code">1</code>-wide, but this in fact
+      agrees with their rendering on many terminals.
+<p>
+
+      Clients should not over-rely on <code class="code">tty_width_hint</code>. It provides a
+      best-effort approximation which will sometimes fail in
+      practice.<br>
+</div>
+<br>
+<h1 id="break_low">Low level interface</h1><br>
+
+<pre><span class="keyword">module</span> <a href="Uucp.Break.Low.html">Low</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Uucp.Break.Low.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+Low level interface.
+</div>
+</body></html>

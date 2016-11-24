@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Uucp.Gen.html">
+<link rel="next" href="Uucp.Name.html">
+<link rel="Up" href="Uucp.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Uucp" rel="Chapter" href="Uucp.html"><link title="Identifier properties" rel="Section" href="#idprops">
+<link title="Pattern syntax properties" rel="Section" href="#patprops">
+<title>Uucp.Id</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Uucp.Gen.html" title="Uucp.Gen">Previous</a>
+&nbsp;<a class="up" href="Uucp.html" title="Uucp">Up</a>
+&nbsp;<a class="post" href="Uucp.Name.html" title="Uucp.Name">Next</a>
+</div>
+<h1>Module <a href="type_Uucp.Id.html">Uucp.Id</a></h1>
+
+<pre><span class="keyword">module</span> Id: <code class="code"><span class="keyword">sig</span></code> <a href="Uucp.Id.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+Identifier properties.
+<p>
+
+    <h3 id="3_References">References</h3>
+    <ul>
+<li>Mark Davis.
+    <em><a href="http://www.unicode.org/reports/tr31/">UAX #31
+       Unicode Identifier and Pattern Syntax</a></em>. (latest version)</li>
+</ul>
+<br>
+</div>
+<hr width="100%">
+<br>
+<h1 id="idprops">Identifier properties</h1><br>
+
+<pre><span id="VALis_id_start"><span class="keyword">val</span> is_id_start</span> : <code class="type"><a href="Uucp.html#TYPEuchar">Uucp.uchar</a> -> bool</code></pre><div class="info ">
+<code class="code">is_id_start u</code> is <code class="code"><span class="keyword">true</span></code> if <code class="code">u</code> has the
+      <a href="http://www.unicode.org/reports/tr44/#ID_Start">ID_Start</a>
+      property.<br>
+</div>
+
+<pre><span id="VALis_id_continue"><span class="keyword">val</span> is_id_continue</span> : <code class="type"><a href="Uucp.html#TYPEuchar">Uucp.uchar</a> -> bool</code></pre><div class="info ">
+<code class="code">is_id_continue u</code> is <code class="code"><span class="keyword">true</span></code> if <code class="code">u</code> has the
+      <a href="http://www.unicode.org/reports/tr44/#ID_Continue">ID_Continue</a>
+      property.<br>
+</div>
+
+<pre><span id="VALis_xid_start"><span class="keyword">val</span> is_xid_start</span> : <code class="type"><a href="Uucp.html#TYPEuchar">Uucp.uchar</a> -> bool</code></pre><div class="info ">
+<code class="code">is_xid_start u</code> is <code class="code"><span class="keyword">true</span></code> if <code class="code">u</code> has the
+      <a href="http://www.unicode.org/reports/tr44/#XID_Start">XID_Start</a>
+      property.<br>
+</div>
+
+<pre><span id="VALis_xid_continue"><span class="keyword">val</span> is_xid_continue</span> : <code class="type"><a href="Uucp.html#TYPEuchar">Uucp.uchar</a> -> bool</code></pre><div class="info ">
+<code class="code">is_xid_continue u</code> is <code class="code"><span class="keyword">true</span></code> if <code class="code">u</code> has the
+      <a href="http://www.unicode.org/reports/tr44/#XID_Continue">XID_Continue</a>
+      property.<br>
+</div>
+<br>
+<h1 id="patprops">Pattern syntax properties</h1><br>
+
+<pre><span id="VALis_pattern_syntax"><span class="keyword">val</span> is_pattern_syntax</span> : <code class="type"><a href="Uucp.html#TYPEuchar">Uucp.uchar</a> -> bool</code></pre><div class="info ">
+<code class="code">is_pattern_syntax u</code> is <code class="code"><span class="keyword">true</span></code> if <code class="code">u</code> has the
+      <a href="http://www.unicode.org/reports/tr44/#Pattern_Syntax">Pattern_Syntax</a>
+      property.<br>
+</div>
+
+<pre><span id="VALis_pattern_white_space"><span class="keyword">val</span> is_pattern_white_space</span> : <code class="type"><a href="Uucp.html#TYPEuchar">Uucp.uchar</a> -> bool</code></pre><div class="info ">
+<code class="code">is_pattern_white_space u</code> is <code class="code"><span class="keyword">true</span></code> if <code class="code">u</code> has the
+      <a href="http://www.unicode.org/reports/tr44/#Pattern_White_Space">
+      Pattern_White_Space</a> property.<br>
+</div>
+</body></html>

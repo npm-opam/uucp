@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Uucp.Cjk.html">
+<link rel="next" href="Uucp.Gc.html">
+<link rel="Up" href="Uucp.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Uucp" rel="Chapter" href="Uucp.html"><link title="Function and graphics properties" rel="Section" href="#funcprops">
+<title>Uucp.Func</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Uucp.Cjk.html" title="Uucp.Cjk">Previous</a>
+&nbsp;<a class="up" href="Uucp.html" title="Uucp">Up</a>
+&nbsp;<a class="post" href="Uucp.Gc.html" title="Uucp.Gc">Next</a>
+</div>
+<h1>Module <a href="type_Uucp.Func.html">Uucp.Func</a></h1>
+
+<pre><span class="keyword">module</span> Func: <code class="code"><span class="keyword">sig</span></code> <a href="Uucp.Func.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+Function and graphics properties.<br>
+</div>
+<hr width="100%">
+<br>
+<h1 id="funcprops">Function and graphics properties</h1><br>
+
+<pre><span id="VALis_dash"><span class="keyword">val</span> is_dash</span> : <code class="type"><a href="Uucp.html#TYPEuchar">Uucp.uchar</a> -> bool</code></pre><div class="info ">
+<code class="code">is_dash u</code> is <code class="code"><span class="keyword">true</span></code> if <code class="code">u</code> has the
+      <a href="http://www.unicode.org/reports/tr44/#Dash">Dash</a>
+      property.<br>
+</div>
+
+<pre><span id="VALis_diacritic"><span class="keyword">val</span> is_diacritic</span> : <code class="type"><a href="Uucp.html#TYPEuchar">Uucp.uchar</a> -> bool</code></pre><div class="info ">
+<code class="code">is_diacritic u</code> is <code class="code"><span class="keyword">true</span></code> if <code class="code">u</code> has the
+      <a href="http://www.unicode.org/reports/tr44/#Diacritic">Diacritic</a>
+      property.<br>
+</div>
+
+<pre><span id="VALis_extender"><span class="keyword">val</span> is_extender</span> : <code class="type"><a href="Uucp.html#TYPEuchar">Uucp.uchar</a> -> bool</code></pre><div class="info ">
+<code class="code">is_extender u</code> is <code class="code"><span class="keyword">true</span></code> if <code class="code">u</code> has the
+      <a href="http://www.unicode.org/reports/tr44/#Extender">Extender</a>
+      property.<br>
+</div>
+
+<pre><span id="VALis_grapheme_base"><span class="keyword">val</span> is_grapheme_base</span> : <code class="type"><a href="Uucp.html#TYPEuchar">Uucp.uchar</a> -> bool</code></pre><div class="info ">
+<code class="code">is_grapheme_base u</code> is <code class="code"><span class="keyword">true</span></code> if <code class="code">u</code> has the
+      <a href="http://www.unicode.org/reports/tr44/#Grapheme_Base">Grapheme_Base</a>
+      property.<br>
+</div>
+
+<pre><span id="VALis_grapheme_extend"><span class="keyword">val</span> is_grapheme_extend</span> : <code class="type"><a href="Uucp.html#TYPEuchar">Uucp.uchar</a> -> bool</code></pre><div class="info ">
+<code class="code">is_grapheme_extend u</code> is <code class="code"><span class="keyword">true</span></code> if <code class="code">u</code> has the
+      <a href="http://www.unicode.org/reports/tr44/#Grapheme_Extend">Grapheme_Extend</a>
+      property.<br>
+</div>
+
+<pre><span id="VALis_math"><span class="keyword">val</span> is_math</span> : <code class="type"><a href="Uucp.html#TYPEuchar">Uucp.uchar</a> -> bool</code></pre><div class="info ">
+<code class="code">is_math u</code> is <code class="code"><span class="keyword">true</span></code> if <code class="code">u</code> has the
+      <a href="http://www.unicode.org/reports/tr44/#Math">Math</a>
+      property.<br>
+</div>
+
+<pre><span id="VALis_quotation_mark"><span class="keyword">val</span> is_quotation_mark</span> : <code class="type"><a href="Uucp.html#TYPEuchar">Uucp.uchar</a> -> bool</code></pre><div class="info ">
+<code class="code">is_quotation_mark u</code> is <code class="code"><span class="keyword">true</span></code> if <code class="code">u</code> has the
+      <a href="http://www.unicode.org/reports/tr44/#Quotation_Mark">Quotation_Mark</a>
+      property.<br>
+</div>
+
+<pre><span id="VALis_soft_dotted"><span class="keyword">val</span> is_soft_dotted</span> : <code class="type"><a href="Uucp.html#TYPEuchar">Uucp.uchar</a> -> bool</code></pre><div class="info ">
+<code class="code">is_soft_dotted u</code> is <code class="code"><span class="keyword">true</span></code> if <code class="code">u</code> has the
+      <a href="http://www.unicode.org/reports/tr44/#Soft_Dotted">Soft_Dotted</a>
+      property.<br>
+</div>
+
+<pre><span id="VALis_terminal_punctuation"><span class="keyword">val</span> is_terminal_punctuation</span> : <code class="type"><a href="Uucp.html#TYPEuchar">Uucp.uchar</a> -> bool</code></pre><div class="info ">
+<code class="code">is_terminal_punct u</code> is <code class="code"><span class="keyword">true</span></code> if <code class="code">u</code> has the
+      <a href="http://www.unicode.org/reports/tr44/#Terminal_Punctuation">
+      Terminal_Punctuation</a> property.<br>
+</div>
+</body></html>

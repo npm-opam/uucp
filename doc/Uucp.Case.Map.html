@@ -1,0 +1,45 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="next" href="Uucp.Case.Fold.html">
+<link rel="Up" href="Uucp.Case.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Uucp" rel="Chapter" href="Uucp.html"><link title="Case mappings" rel="Section" href="#casemaps">
+<title>Uucp.Case.Map</title>
+</head>
+<body>
+<div class="navbar">&nbsp;<a class="up" href="Uucp.Case.html" title="Uucp.Case">Up</a>
+&nbsp;<a class="post" href="Uucp.Case.Fold.html" title="Uucp.Case.Fold">Next</a>
+</div>
+<h1>Module <a href="type_Uucp.Case.Map.html">Uucp.Case.Map</a></h1>
+
+<pre><span class="keyword">module</span> Map: <code class="code"><span class="keyword">sig</span></code> <a href="Uucp.Case.Map.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+Case mappings.<br>
+</div>
+<hr width="100%">
+<br>
+<h1 id="casemaps">Case mappings</h1><br>
+
+<pre><span id="VALto_lower"><span class="keyword">val</span> to_lower</span> : <code class="type"><a href="Uucp.html#TYPEuchar">Uucp.uchar</a> -> [ `Self | `Uchars of <a href="Uucp.html#TYPEuchar">Uucp.uchar</a> list ]</code></pre><div class="info ">
+<code class="code">to_lower u</code> is <code class="code">u</code>'s
+        <a href="http://www.unicode.org/reports/tr44/#Lowercase_Mapping">
+        Lowercase_Mapping</a> property.<br>
+</div>
+
+<pre><span id="VALto_upper"><span class="keyword">val</span> to_upper</span> : <code class="type"><a href="Uucp.html#TYPEuchar">Uucp.uchar</a> -> [ `Self | `Uchars of <a href="Uucp.html#TYPEuchar">Uucp.uchar</a> list ]</code></pre><div class="info ">
+<code class="code">to_upper u</code> is <code class="code">u</code>'s
+        <a href="http://www.unicode.org/reports/tr44/#Uppercase_Mapping">
+        Uppercase_Mapping</a> property.<br>
+</div>
+
+<pre><span id="VALto_title"><span class="keyword">val</span> to_title</span> : <code class="type"><a href="Uucp.html#TYPEuchar">Uucp.uchar</a> -> [ `Self | `Uchars of <a href="Uucp.html#TYPEuchar">Uucp.uchar</a> list ]</code></pre><div class="info ">
+<code class="code">to_title u</code> is <code class="code">u</code>'s
+        <a href="http://www.unicode.org/reports/tr44/#Titlecase_Mapping">
+        Titlecase_Mapping</a> property.<br>
+</div>
+</body></html>
